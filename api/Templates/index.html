@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <center><h1>Calculator</h1></center>    
+    <div class="calculator">
+        <form action="/calculate" method="POST">
+            <div class="text">
+                <div class="num1">
+                    <label for="num1">Number 1:</label>
+                    <input type="text" name="num1"><br>
+                </div>
+            
+                <div class="num2">
+                    <label for="num2">Number 2:</label>
+                    <input type="text" name="num2"><br>
+                </div>
+              
+            </div>
+            <div class="types">
+                <div><input type="radio" name="operation" value="add" checked> Add<br></div>
+                <div><input type="radio" name="operation" value="subtract"> Subtract<br></div>
+                <div><input type="radio" name="operation" value="multiply"> Multiply<br></div>
+                <div><input type="radio" name="operation" value="divide"> Divide<br></div>
+               
+            </div>
+
+            <input type="submit" value="Calculate" id="button">
+
+
+        </form>
+        {% if result %}
+            <h2>Result: {{ result }}</h2>
+        {% endif %}
+    </div>
+
+    
+</body>
+</html>
+
+<style>
+    body, #button{
+        background-color: gray;
+    }
+
+    .calculator{
+        text-align: center;
+    }
+
+    .types{
+        padding-top: 1.5rem;
+    }
+
+    #button{
+        margin-top: 1.5rem;
+    }
+
+    #button:hover{
+        background-color: black;
+        color: white;
+        transition: width 2s, height 2s, background-color 2s, transform 2s, color 2s;
+    }
+
+    .num2{
+        margin-top: 0.5rem;
+    }
+</style>

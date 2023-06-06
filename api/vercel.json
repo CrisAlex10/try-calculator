@@ -1,0 +1,14 @@
+ {
+     "builds": [
+         {
+             "src": "api/calculatel.py",
+             "use": "@vercel/python"
+         }
+     ],
+     "routes": [
+         {
+             "src": "/(.*)",
+             "dest": "api/calculatel.py"
+         }
+     ]
+ }
